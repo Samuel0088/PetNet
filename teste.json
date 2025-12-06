@@ -1,0 +1,7 @@
+{
+  "servico_id": 1,
+  "data_agendamento": "2024-01-25T10:00:00",
+  "nome_cliente": "Cliente Teste",
+  "email_cliente": "samuelfreitas202020@gmail.com",
+  "observacoes": "Teste de agendamento"
+}

@@ -1,0 +1,57 @@
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 189, 67);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 1s ease;
+  pointer-events: none; /* Permite interação com conteúdo abaixo */
+}
+
+.intro.fade-out {
+  opacity: 0;
+}
+
+/* Garante que quando a intro some, ela não bloqueie mais */
+.intro:not(.fade-out) {
+  pointer-events: auto;
+}
+
+.intro img {
+  animation: pulse 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Dark Mode Intro */
+.dark-mode .intro {
+  background-color: #212121;
+}
+
+/* IMPORTANTE: Garante que o conteúdo principal seja visível desde o início */
+body {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Remove qualquer atraso de renderização do conteúdo */
+#root, .app, .main-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 1;
+}
